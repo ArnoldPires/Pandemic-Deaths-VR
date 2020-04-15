@@ -1,32 +1,62 @@
 <html>
   <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no,user-scalable=no,maximum-scale=1">
     <title>All Pandemic Deaths</title>
     <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aframe/0.4.0/aframe.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/donmccurdy/aframe-extras@v6.1.0/dist/aframe-extras.min.js"></script>
   </head>
   <body>
     <a-scene>
-      <a-box position="-1 0.5 -3" rotation="0 45 0" color="#1e90ff"></a-box>
-      <a-box position="-1 0.5 -3" rotation="0 45 0" color="#b8c5d0"></a-box>
-      <a-box position="-1 0.5 -3" rotation="0 45 0" color="#a78254"></a-box>
-      <a-box position="-1 0.5 -3" rotation="0 45 0" color="#e20505"></a-box>
-      <a-box position="-1 0.5 -3" rotation="0 45 0" color="#ffff01"></a-box>
-      <a-box position="-1 0.5 -3" rotation="0 45 0" color="#65b182"></a-box>
-      <a-box position="-1 0.5 -3" rotation="0 45 0" color="#9eff98"></a-box>
-      <a-box position="-1 0.5 -3" rotation="0 45 0" color="#8c1a6f"></a-box>
-      <a-box position="-1 0.5 -3" rotation="0 45 0" color="#1f3a93"></a-box>
-      <a-box position="-1 0.5 -3" rotation="0 45 0" color="#fda500"></a-box>
-      <a-box position="-1 0.5 -3" rotation="0 45 0" color="#ffafbc"></a-box>
-      <a-box position="-1 0.5 -3" rotation="0 45 0" color="#4CC3D9"></a-box>
-      <a-box position="-1 0.5 -3" rotation="0 45 0" color="#4CC3D9"></a-box>
-      <a-box position="-1 0.5 -3" rotation="0 45 0" color="#4CC3D9"></a-box>
-      <a-box position="-1 0.5 -3" rotation="0 45 0" color="#4CC3D9"></a-box>
-      <a-box position="-1 0.5 -3" rotation="0 45 0" color="#4CC3D9"></a-box>
-      <a-box position="-1 0.5 -3" rotation="0 45 0" color="#4CC3D9"></a-box>
-      <a-box position="-1 0.5 -3" rotation="0 45 0" color="#4CC3D9"></a-box>
-      <a-box position="-1 0.5 -3" rotation="0 45 0" color="#4CC3D9"></a-box>
-      <a-box position="-1 0.5 -3" rotation="0 45 0" color="#4CC3D9"></a-box>
-      <a-plane position="0 0 -4" rotation="-90 0 0" width="4" height="4" color="#7BC8A4"></a-plane>
-      <a-sky color="#AAAAEC"></a-sky>
+
+      <a-assets>
+        <a-mixin id="checkpoint"></a-mixin>
+        <a-mixin id="checkpoint-hovered" color="#6CEEB5"></a-mixin>
+      </a-assets>
+
+      <a-entity id="rig" movement-controls="controls: checkpoint" checkpoint-controls="mode: animate">
+        <a-entity camera
+                  position="3.3 1.6 2"
+                  look-controls="pointerLockEnabled: true">
+        <a-entity cursor
+                  position="0 0 -1"
+                  geometry="primitive: ring; radiusInner: 0.02; radiusOuter: 0.03;"
+                  material="color: #CCC; shader: flat;"></a-entity>
+      </a-entity>
+      </a-entity>
+
+      <a-box position="-2 0.5 -3" height="0.770" color="#1e90ff"></a-box>
+      <a-box position="0 0.5 -3" height="0.850" color="#b8c5d0"></a-box>
+      <a-box position="2 0.5 -3" height="1.130" color="#a78254"></a-box>
+      <a-box position="4 0.5 -3" height="12.170" color="#e20505"></a-box>
+      <a-box position="6 0.5 -3" height="15.100" color="#ffff01"></a-box>
+
+      <a-box position="8 0.5 -2" height="20.1" color="#65b182"></a-box>
+      <a-box position="8 0.5 0" height="60.1" color="#9eff98"></a-box>
+      <a-box position="8 0.5 2" height="100" color="#8c1a6f"></a-box>
+      <a-box position="8 0.5 4" height="100" color="#1f3a93"></a-box>
+      <a-box position="8 0.5 6" height="100" color="#fda500"></a-box>
+
+      <a-box position="-4 0.5 -2" height="20000" color="#000000"></a-box>
+      <a-box position="-4 0.5 0" height="5600" color="#7c0001"></a-box>
+      <a-box position="-4 0.5 2" height="5000" color="#f0390b"></a-box>
+      <a-box position="-4 0.5 4" height="5000" color="#818107"></a-box>
+      <a-box position="-4 0.5 6" height="3500" color="#069941"></a-box>
+
+      <a-box position="-2 0.5 7" height="1200" color="#ffafbc"></a-box>
+      <a-box position="0 0.5 7" height="500" color="#e45415"></a-box>
+      <a-box position="2 0.5 7" height="300" color="#0f95b6"></a-box>
+      <a-box position="4 0.5 7" height="110" color="#bf00fe"></a-box>
+      <a-box position="6 0.5 7" height="100 1200" color="#f1cd82"></a-box>
+
+      <a-plane checkpoint radius="0.5" position="5 13 2" rotation="90 0 0" width="1" height="1" visible="true" color="#7BC8A4"></a-plane>
+
+      <a-plane checkpoint radius="0.5" position="2 0 2" rotation="-90 0 0" width="15" height="12" visible="true" color="#7BC8A4"></a-plane>
+
+      <a-sky id="sky" src="https://static.turbosquid.com/Preview/2018/03/06__02_30_54/cgaxis_hdri_skies_01_58.jpg3EE091B2-362A-46A2-9B0E-3CB4A8D7A0F2DefaultHQ.jpg"></a-sky>
+
     </a-scene>
   </body>
 </html>
