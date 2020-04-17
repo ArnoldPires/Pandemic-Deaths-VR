@@ -5,8 +5,8 @@
     <meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no,user-scalable=no,maximum-scale=1">
     <title>All Pandemic Deaths</title>
     <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/aframe/0.4.0/aframe.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/gh/donmccurdy/aframe-extras@v6.1.0/dist/aframe-extras.min.js"></script>
+  <!--  <script src="https://cdnjs.cloudflare.com/ajax/libs/aframe/0.4.0/aframe.min.js"></script> -->
+  <script src="https://cdn.jsdelivr.net/gh/donmccurdy/aframe-extras@v6.1.0/dist/aframe-extras.min.js"></script>
   </head>
   <body>
     <a-scene>
@@ -14,11 +14,12 @@
       <a-assets>
         <a-mixin id="checkpoint"></a-mixin>
         <a-mixin id="checkpoint-hovered" color="#6CEEB5"></a-mixin>
+        <img id="background" crossorigin="anonymous" src="https://live.staticflickr.com/65535/49757866967_724b2d17ba_6k.jpg">
       </a-assets>
 
       <a-entity id="rig" movement-controls="controls: checkpoint" checkpoint-controls="mode: animate">
-        <a-entity camera
-                  position="3.3 1.6 2"
+        <a-entity camera="userHeight: 1.6"
+                  position="0 1.6 0"
                   look-controls="pointerLockEnabled: true">
         <a-entity cursor
                   position="0 0 -1"
@@ -27,36 +28,137 @@
       </a-entity>
       </a-entity>
 
-      <a-box position="-2 0.5 -3" height="0.770" color="#1e90ff"></a-box>
-      <a-box position="0 0.5 -3" height="0.850" color="#b8c5d0"></a-box>
-      <a-box position="2 0.5 -3" height="1.130" color="#a78254"></a-box>
-      <a-box position="4 0.5 -3" height="12.170" color="#e20505"></a-box>
-      <a-box position="6 0.5 -3" height="15.100" color="#ffff01"></a-box>
+      <a-box position="-2 0.5 -3" height="0.70" color="#1e90ff">
+        <a-text value="Sars"></a-text>
+        <a-text value="770 Deaths"></a-text>
+        <a-text value="2002-2003"></a-text>
+      </a-box>
+      <a-box position="0 0.5 -3" height="0.85" color="#b8c5d0">
+        <a-text value="Mers"></a-text>
+        <a-text value="850 Deaths"></a-text>
+        <a-text value="2012-Present"></a-text>
+      </a-box>
+      <a-box position="2 0.5 -3" height="1.113" color="#a78254">
+        <a-text value="Ebola"></a-text>
+        <a-text value="11.3k Deaths"></a-text>
+        <a-text value="2014-2016"></a-text>
+      </a-box>
+      <a-box position="4 0.5 -3" height="1.395" color="#e20505">
+        <a-text value="Covid-19"></a-text>
+        <a-text value="139.5k Deaths"></a-text>
+        <a-text value="2019-Present"></a-text>
+      </a-box>
+      <a-box position="6 0.5 -3" height="1.500" color="#ffff01">
+        <a-text value="Yellow Fever"></a-text>
+        <a-text value="150k Deaths"></a-text>
+        <a-text value="Late 1800s"></a-text>
+      </a-box>
 
-      <a-box position="8 0.5 -2" height="20.1" color="#65b182"></a-box>
-      <a-box position="8 0.5 0" height="60.1" color="#9eff98"></a-box>
-      <a-box position="8 0.5 2" height="100" color="#8c1a6f"></a-box>
-      <a-box position="8 0.5 4" height="100" color="#1f3a93"></a-box>
-      <a-box position="8 0.5 6" height="100" color="#fda500"></a-box>
+      <a-box position="8 0.5 -2" height="2" color="#65b182">
+        <a-text value="Swine Flu"></a-text>
+        <a-text value="200k Deaths"></a-text>
+        <a-text value="2009-2010"></a-text>
+      </a-box>
+      <a-box position="8 0.5 0" height="6" color="#9eff98">
+        <a-text value="18th Century Great Plagues"></a-text>
+        <a-text value="600k Deaths"></a-text>
+        <a-text value="1700"></a-text>
+      </a-box>
+      <a-box position="8 0.5 2" height="10" color="#8c1a6f">
+        <a-text value="Japanese Smallpox Epidemic"></a-text>
+        <a-text value="1mil Deaths"></a-text>
+        <a-text value="735-737"></a-text>
+      </a-box>
+      <a-box position="8 0.5 4" height="10" color="#1f3a93">
+        <a-text value="Cholera 6 outbreak"></a-text>
+        <a-text value="1mil Deaths"></a-text>
+        <a-text value="1817-1923"></a-text>
+      </a-box>
+      <a-box position="8 0.5 6" height="10" color="#fda500">
+        <a-text value="Hong Kong Flu"></a-text>
+        <a-text value="1mil Deaths"></a-text>
+        <a-text value="1968-1970"></a-text>
+      </a-box>
 
-      <a-box position="-4 0.5 -2" height="20000" color="#000000"></a-box>
-      <a-box position="-4 0.5 0" height="5600" color="#7c0001"></a-box>
-      <a-box position="-4 0.5 2" height="5000" color="#f0390b"></a-box>
-      <a-box position="-4 0.5 4" height="5000" color="#818107"></a-box>
-      <a-box position="-4 0.5 6" height="3500" color="#069941"></a-box>
+      <a-box checkpoint="" position="-4 0.5 -2" height="200" color="#000000">
+        <a-text value="Black Death"></a-text>
+        <a-text value="200mil Deaths"></a-text>
+        <a-text value="1347-1351"></a-text>
+      </a-box>
+      <a-box position="-4 0.5 0" height="56" color="#7c0001">
+        <a-text value="Small Pox"></a-text>
+        <a-text value="56mil Deaths"></a-text>
+        <a-text value="1520"></a-text>
+      </a-box>
+      <a-box position="-4 0.5 2" height="50" color="#f0390b">
+        <a-text value="Spanish Flu"></a-text>
+        <a-text value="50mil Deaths"></a-text>
+        <a-text value="1918-1919"></a-text>
+      </a-box>
+      <a-box position="-4 0.5 4" height="50" color="#818107">
+        <a-text value="Plague of Justinian"></a-text>
+        <a-text value="50mil Deaths"></a-text>
+        <a-text value="541-542"></a-text>
+      </a-box>
+      <a-box position="-4 0.5 6" height="35" color="#069941">
+        <a-text value="HIV/Aids"></a-text>
+        <a-text value="35mil Deaths"></a-text>
+        <a-text value="1981-Present"></a-text>
+      </a-box>
 
-      <a-box position="-2 0.5 7" height="1200" color="#ffafbc"></a-box>
-      <a-box position="0 0.5 7" height="500" color="#e45415"></a-box>
-      <a-box position="2 0.5 7" height="300" color="#0f95b6"></a-box>
-      <a-box position="4 0.5 7" height="110" color="#bf00fe"></a-box>
-      <a-box position="6 0.5 7" height="1200" color="#f1cd82"></a-box>
+      <a-box position="-2 0.5 7" height="21" color="#ffafbc">
+        <a-text value="The Third Plague"></a-text>
+        <a-text value="12mil Deaths"></a-text>
+        <a-text value="1855"></a-text>
+      </a-box>
+      <a-box position="0 0.5 7" height="15" color="#e45415">
+        <a-text value="Antonine Plague"></a-text>
+        <a-text value="5mil Deaths"></a-text>
+        <a-text value="165-180"></a-text>
+      </a-box>
+      <a-box position="2 0.5 7" height="13" color="#0f95b6">
+        <a-text value="17th Century Great Plagues"></a-text>
+        <a-text value="3mil Deaths"></a-text>
+        <a-text value="1600"></a-text>
+      </a-box>
+      <a-box position="4 0.5 7" height="11" color="#bf00fe">
+        <a-text value="Asian Flu"></a-text>
+        <a-text value="1.1mil Deaths"></a-text>
+        <a-text value="1957-1958"></a-text>
+      </a-box>
+      <a-box position="6 0.5 7" height="10" color="#f1cd82">
+        <a-text value="Russian Flu"></a-text>
+        <a-text value="1mil Deaths"></a-text>
+        <a-text value="1889-1890"></a-text>
+      </a-box>
 
-      <a-plane checkpoint radius="0.5" position="5 13 2" rotation="90 0 0" width="1" height="1" visible="true" color="#7BC8A4"></a-plane>
+      <!-- checkpoints -->
+      <a-entity position = "1 0 1">
+        <a-cylinder checkpoint="" radius="1" position="-3.28136 0.05 -1.99894" height="0.1" color="#e20505" scale="0.24 1 0.25" material="" geometry=""></a-cylinder>
+        <a-cylinder checkpoint="" radius="1" position="0.74353 0.05 -1.99259" height="0.1" color="#e20505" scale="0.24 1 0.25" material="" geometry=""></a-cylinder>
+        <a-cylinder checkpoint="" radius="1" position="4.74161 0.05 -1.996" height="0.1" color="#e20505" scale="0.24 1 0.25" material="" geometry=""></a-cylinder>
+        <a-cylinder checkpoint="" radius="1" position="-3.22 0.05 1.00104" height="0.1" color="#e20505" scale="0.24 1 0.25" material="" geometry=""></a-cylinder>
+        <a-cylinder checkpoint="" radius="1" position="-3.25995 0.05 3.99455" height="0.1" color="#e20505" scale="0.24 1 0.25" material="" geometry=""></a-cylinder>
+        <a-cylinder checkpoint="" radius="1" position="0.5122 0.05 3.98947" height="0.1" color="#e20505" scale="0.24 1 0.25" material="" geometry=""></a-cylinder>
+        <a-cylinder checkpoint="" radius="1" position="4.74086 0.05 0.99944" height="0.1" color="#e20505" scale="0.24 1 0.25" material="" geometry=""></a-cylinder>
+        <a-cylinder checkpoint="" radius="1" position="4.76523 0.05 3.98309" height="0.1" color="#e20505" scale="0.24 1 0.25" material="" geometry=""></a-cylinder>
 
-      <a-plane checkpoint radius="0.5" position="2 0 2" rotation="-90 0 0" width="15" height="12" visible="true" color="#7BC8A4"></a-plane>
+        <a-cylinder checkpoint="" radius="1" position="1.8 7.97542 2.8" height="0.1" scale="0.6 1 0.6" color="#e20505" material="" geometry=""></a-cylinder>
+        <a-cylinder checkpoint="" radius="1" position="1.69543 5.87414 -1.08915" height="0.1" scale="0.6 1 0.6" color="#e20505" material="" geometry=""></a-cylinder>
+        <a-cylinder checkpoint="" radius="1" position="1.8 10.96234 -1.38523" height="0.1" scale="0.6 1 0.6" color="#e20505" material="" geometry=""></a-cylinder>
+        <a-cylinder checkpoint="" radius="1" position="1.8 14.12704 2.8" height="0.1" scale="0.6 1 0.6" color="#e20505" material="" geometry=""></a-cylinder>
+        <a-cylinder checkpoint="" radius="1" position="1.8 3.30839 2.8" height="0.1" scale="0.6 1 0.6" color="#e20505" material="" geometry=""></a-cylinder>
 
-      <a-sky id="sky" src="https://static.turbosquid.com/Preview/2018/03/06__02_30_54/cgaxis_hdri_skies_01_58.jpg3EE091B2-362A-46A2-9B0E-3CB4A8D7A0F2DefaultHQ.jpg"></a-sky>
+        <a-cylinder checkpoint="" radius="1" position="1.8 31.19331 -1.06126" height="0.1" scale="0.6 1 0.6" color="#e20505" material="" geometry=""></a-cylinder>
+        <a-cylinder checkpoint="" radius="1" position="1.8 26.4356 3.00524" height="0.1" scale="0.6 1 0.6" color="#e20505" material="" geometry=""></a-cylinder>
+        <a-cylinder checkpoint="" radius="1" position="1.8 18.86246 -1.22223" height="0.1" scale="0.6 1 0.6" color="#e20505" material="" geometry=""></a-cylinder>
 
+        <a-cylinder checkpoint="" radius="1" position="-3.60614 100.76737 -4.31466" height="0.1" scale="0.6 1 0.6" color="#e20505" material="" geometry=""></a-cylinder>
+        <a-cylinder checkpoint="" radius="1" position="1.8 50.88297 5.63017" height="0.1" scale="0.6 1 0.6" color="#e20505" material="" geometry=""></a-cylinder>
+      </a-entity>
+
+      <a-plane position="2 0 2" rotation="-90 0 0" width="15" height="12" visible="true" color="#7BC8A4"></a-plane>
+      <a-sky id="background-img" src="#background"></a-sky>
     </a-scene>
   </body>
 </html>
